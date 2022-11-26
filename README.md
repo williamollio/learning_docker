@@ -128,7 +128,7 @@ Docker inspect image_id
 On production never use node:latest since it will pull a new version depending on the release. That may break dependencies which won't be compatible with the next version.
 
 
-# Exercise : Build your own nginx container (NOT DONE FOR NOW)
+# Exercise : Build your own nginx container
 
 Go to the according folder, every files that you need are already there.
 Requirements :
