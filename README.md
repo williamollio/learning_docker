@@ -156,5 +156,5 @@ docker image prune -a --force --filter "until=24h"
 Delete all stopped containers
 docker rm $(docker ps -q -a)
 
-# Next topics
-Volumes / Network / Docker compose
+### Sources
+Docker documentation and a course on the website "Frontend Masters" made by Brian Holt
