@@ -35,7 +35,7 @@ Build the container by giving a name to image.
 ## Try and check out the solution afterwards
 node -e, if you don't know, will run whatever is inside of the quotes with Node.js. In this case, we're logging out hi lol to the console.
 
-## Informatoin point
+## Information point
 Layers : we have to think of containers like being onions. Each instruction is built depending on the previous one. The order really matters here. One instruction is executed only if the cache gets invalidated. So the clever way here is to reinstall the node dependencies only if a change appears there and not for every change on the js files.
 
 # Build a Node.js App
