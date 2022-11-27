@@ -22,15 +22,15 @@ We will deal with basic containers and commands. We won't talk about best practi
 ## Information point
 ```docker run``` has more options than any other docker commands because it gives to the operator the ability to override image and Docker runtime defaults set by the developer. This command is runned in the foreground by default.
 ## Information point
-Each lines are called instructions. They don't technically have to be all caps but it's convention to do so so that the file is easier to read. Each one of these instruction incrementally changes the container from the state it was in previously, adding what we call a layer.
+Each lines are called instructions. They don't technically have to be all caps but it's convention to do so, so that the file is easier to read. Each one of these instructions incrementally change the container from the state it was in previously, adding what we call a layer.
 # Basic node container
 
 First task will be to write a Dockerfile for building a node container based on Debian stretch version 12.
 Run a simple command in there and then build the image out of the Dockerfile.
 Run the container from the image.
 
-Launch a command inside the container from a docker command
-Build the container by giving a name to image
+Launch a command inside the container from a docker command.
+Build the container by giving a name to image.
 
 ## Try and check out the solution afterwards
 node -e, if you don't know, will run whatever is inside of the quotes with Node.js. In this case, we're logging out hi lol to the console.
@@ -57,19 +57,20 @@ COPY the index.js in the home/src directory
 ## Try and check out the solution afterwards
 
 BTW : Does someone know why there is two requests ?
+-> the browser sends a GET request for getting the favicon
 
-Several ID's on the output logs of ```docker build```, basic they are all valid containers and could be launched if we wish. That's the way Docker caches it
+Several ID's on the output logs of ```docker build```, basically they are all valid containers and could be launched if we wish. That's the way Docker caches it
 
-```docker run --init``` (exce TINI which allows control C to kill the container running)
+```docker run --init``` (execute TINI which allows control C to kill the container running)
 
-```docker run [...] -p 3000:3000 ``` The publish part allows you to forward a port out of a container to the host computer. In this case we're forwarding the port of 3000 (which is what the Node.js server was listening on) to port 3000 on the host machine. The 3000 represents the port on the host machine and the second 3000 represents what port is being used in the container. If you did docker run --publish 8000:3000 my-node-app, you'd open localhost:8000 to see the server (running on port 3000 inside the container).
+```docker run [...] -p 3000:3000 ``` The publish part allows you to forward a port out of a container to the host computer. In this case we're forwarding the port of 3000 (which is what the Node.js server was listening on) to port 3000 on the host machine. The 3000 represents the port on the host machine and the second 3000 represents which port is being used in the container. If you did docker run --publish 8000:3000 my-node-app, you'd open localhost:8000 to see the server (running on port 3000 inside the container).
 
 The COPY instruction copy by default in the root of the project.
 
 Commands are runned by default with root access right.
 # Exercise : more complicated node app
 
-Time to pratice ! Have fun by doing a similar task then before but with this new server.
+Have fun by doing a similar task then before but with this new server.
 
 ```// more-or-less the example code from the hapi-pino repo
 const hapi = require("@hapi/hapi");
@@ -141,7 +142,6 @@ Requirements :
 - the nginx server is running on port 443, so set up the according rule to access from the host
 
 
-## Information point
 ### .dockerignore
 To ignore what you copy inside your container : .git (security vulnerability to have that in your production server : git issues are sensitive information).
 .git/
