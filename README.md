@@ -1,4 +1,4 @@
-For your information, today we will deal with basic containers and commands. We won't talk about best practices regarding permissions and access rights which are notions very imporant in Docker though to build secure environnement.
+We will deal with basic containers and commands. We won't talk about best practices regarding permissions and access rights which are notions very imporant in Docker though to build secure environnement.
 ## Docker CLI
 - docker pull container_name
 - docker run -it container_name name
